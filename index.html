@@ -183,7 +183,10 @@ section{padding:90px 0;}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
 @media(max-width:980px){.pgrid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.pgrid{grid-template-columns:1fr;}}
-.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(36,24,17,.08);opacity:0;transform:translateY(14px);animation:fadein .5s forwards;}
+.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(36,24,17,.08);opacity:0;transform:translateY(14px);animation:fadein .5s forwards;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;}
+.pcard:hover{transform:translateY(0) scale(1.045);box-shadow:0 22px 40px -18px rgba(36,24,17,.35);border-color:rgba(36,24,17,.16);}
+.pcard:hover .pcard-img img{transform:scale(1.12);}
+.pcard-img img{transition:transform .5s ease;}
 .pcard-img{aspect-ratio:3/4;overflow:hidden;position:relative;}
 .pcard-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(1.1);}
 .pcard-body{padding:16px 18px 20px;}
@@ -191,7 +194,8 @@ section{padding:90px 0;}
 .pcard-body .fab{font-size:.78rem;color:var(--earth-brown);margin-bottom:8px;}
 .pcard-body .price{font-weight:700;color:var(--terracotta);font-size:1rem;margin-bottom:12px;}
 .pcard-actions{display:flex;gap:8px;}
-.pcard-actions button{flex:1;padding:9px 8px;font-size:.76rem;font-weight:700;border-radius:20px;cursor:pointer;border:1.5px solid var(--deep-brown);background:none;}
+.pcard-actions button{flex:1;padding:9px 8px;font-size:.76rem;font-weight:700;border-radius:999px;cursor:pointer;border:1.5px solid var(--deep-brown);background:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;}
+.pcard-actions .view:hover{background:var(--deep-brown);color:#fff;transform:translateY(-1px);box-shadow:0 8px 16px -6px rgba(36,24,17,.45);}
 .pcard-actions .view{background:var(--deep-brown);color:#fff;border-color:var(--deep-brown);}
 .pcard-actions .wa{color:#3f7a56;border-color:#3f7a56;}
 @keyframes fadein{to{opacity:1;transform:none;}}
@@ -245,7 +249,25 @@ section{padding:90px 0;}
 @media(max-width:900px){.contact-inner{grid-template-columns:1fr;}}
 .info-row{display:flex;gap:12px;margin-bottom:16px;font-size:.92rem;}
 .info-row b{min-width:120px;}
-.whatsapp-cta{display:inline-flex;align-items:center;gap:10px;background:#3f7a56;color:#fff;padding:13px 26px;border-radius:30px;font-weight:700;margin-top:6px;}
+.whatsapp-cta{position:relative;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#2ad167 0%,#1fbd5c 60%,#17a94e 100%);color:#fff;padding:14px 30px;border-radius:999px;font-weight:700;margin-top:6px;text-decoration:none;box-shadow:0 12px 24px -10px rgba(37,211,102,.55),inset 0 1px 0 rgba(255,255,255,.28);overflow:hidden;isolation:isolate;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;}
+.whatsapp-cta::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 22% 0%,rgba(255,255,255,.35),transparent 55%);opacity:.9;z-index:-1;}
+.whatsapp-cta svg{width:20px;height:20px;flex:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18));}
+.whatsapp-cta:hover{background:linear-gradient(135deg,#1fbd5c 0%,#17a94e 60%,#128c41 100%);transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(37,211,102,.65),inset 0 1px 0 rgba(255,255,255,.28);}
+.whatsapp-cta:active{transform:translateY(0) scale(.98);}
+
+/* floating whatsapp button */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:400;width:60px;height:60px;border-radius:50% 50% 50% 18px;background:linear-gradient(135deg,#2ad167 0%,#1fbd5c 60%,#17a94e 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 28px -8px rgba(37,211,102,.55),inset 0 1px 0 rgba(255,255,255,.28);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;}
+.wa-float svg{width:30px;height:30px;fill:#fff;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18));}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 18px 34px -8px rgba(37,211,102,.65),inset 0 1px 0 rgba(255,255,255,.28);}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50% 50% 50% 18px;background:linear-gradient(135deg,#2ad167 0%,#17a94e 100%);opacity:.55;animation:waPulse 2.2s ease-out infinite;z-index:-1;}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+.wa-float-tip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:var(--deep-brown);color:#fff;font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:20px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;transform:translateY(-50%) translateX(6px);}
+.wa-float:hover .wa-float-tip{opacity:1;transform:translateY(-50%) translateX(0);}
+@media(max-width:640px){.wa-float{right:16px;bottom:16px;width:54px;height:54px;}.wa-float svg{width:26px;height:26px;}.wa-float-tip{display:none;}}
+
+.pcard-actions .wa{background:#25D366;color:#fff;border-color:#25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;transition:transform .2s ease,box-shadow .2s ease;}
+.pcard-actions .wa:hover{transform:translateY(-1px);box-shadow:0 8px 16px -6px rgba(37,211,102,.6);}
+.pcard-actions .wa svg{width:14px;height:14px;fill:#fff;flex:none;}
 form.contact-form{display:flex;flex-direction:column;gap:14px;}
 input,textarea{font-family:'DM Sans',sans-serif;font-size:.92rem;padding:13px 16px;border:1px solid rgba(36,24,17,.2);border-radius:8px;background:#fff;color:var(--deep-brown);}
 textarea{min-height:110px;resize:vertical;}
@@ -357,19 +379,19 @@ footer ul a:hover{color:var(--terracotta);}
       </div>
       <div class="grid4c reveal">
         <div class="ccard" onclick="openCategory('banarasi')">
-          <div class="ccard-img"><img src="https://picsum.photos/seed/std-banarasi/500/620" alt="Banarasi silk saree"></div>
+          <div class="ccard-img"><img src="assets/images/products/saree-02-banarasi-pink.jpg" alt="Banarasi silk saree"></div>
           <div class="ccard-body"><h3>Banarasi Elegance</h3><span>Timeless silk sarees for weddings &amp; celebrations</span></div>
         </div>
         <div class="ccard" onclick="openCategory('everyday')">
-          <div class="ccard-img"><img src="https://picsum.photos/seed/std-everyday/500/620" alt="Everyday handloom wear"></div>
+          <div class="ccard-img"><img src="assets/images/products/saree-07-peach-pink-border.jpg" alt="Everyday handloom wear"></div>
           <div class="ccard-body"><h3>Everyday Handloom</h3><span>Breathable cotton wear for daily grace</span></div>
         </div>
         <div class="ccard" onclick="openCategory('bridal')">
-          <div class="ccard-img"><img src="https://picsum.photos/seed/std-bridal/500/620" alt="Bridal trousseau"></div>
+          <div class="ccard-img"><img src="assets/images/products/saree-01-red-gold-petals.jpg" alt="Bridal trousseau"></div>
           <div class="ccard-body"><h3>Bridal Trousseau</h3><span>Curated ensembles for tradition, not trends</span></div>
         </div>
         <div class="ccard" onclick="openCategory('western')">
-          <div class="ccard-img"><img src="https://picsum.photos/seed/std-western/500/620" alt="Western tops and indo-western sets"></div>
+          <div class="ccard-img"><img src="assets/images/products/saree-13-purple-pink-pleats.jpg" alt="Western tops and indo-western sets"></div>
           <div class="ccard-body"><h3>Western Wear</h3><span>Everyday western staples &amp; indo-western sets</span></div>
         </div>
       </div>
@@ -414,12 +436,12 @@ footer ul a:hover{color:var(--terracotta);}
       <div class="sechead reveal"><div><p class="eyebrow">From Thread to Drape</p><h2>Craftsmanship Preview</h2></div>
         <button class="link" style="background:none;border:none;cursor:pointer;" onclick="goPage('craft')">See Full Process →</button></div>
       <div class="timeline reveal">
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t1/300/300" alt="Sourcing raw silk"></div><div class="tstep-body"><span class="num">01</span><h4>Sourcing</h4></div></div>
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t2/300/300" alt="Handweaving on the loom"></div><div class="tstep-body"><span class="num">02</span><h4>Weaving</h4></div></div>
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t3/300/300" alt="Traditional dyeing"></div><div class="tstep-body"><span class="num">03</span><h4>Dyeing</h4></div></div>
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t4/300/300" alt="Hand finishing"></div><div class="tstep-body"><span class="num">04</span><h4>Finishing</h4></div></div>
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t5/300/300" alt="Quality assurance check"></div><div class="tstep-body"><span class="num">05</span><h4>Quality</h4></div></div>
-        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t6/300/300" alt="Packed with care"></div><div class="tstep-body"><span class="num">06</span><h4>Packed</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-06-stack-jewel.jpg" alt="Sourcing raw silk"></div><div class="tstep-body"><span class="num">01</span><h4>Sourcing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-08-stack-pastel.jpg" alt="Handweaving on the loom"></div><div class="tstep-body"><span class="num">02</span><h4>Weaving</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-14-orange-navy-floral.jpg" alt="Traditional dyeing"></div><div class="tstep-body"><span class="num">03</span><h4>Dyeing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-01-red-gold-petals.jpg" alt="Hand finishing"></div><div class="tstep-body"><span class="num">04</span><h4>Finishing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-03-red-temple-border.jpg" alt="Quality assurance check"></div><div class="tstep-body"><span class="num">05</span><h4>Quality</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-12-stack-assorted.jpg" alt="Packed with care"></div><div class="tstep-body"><span class="num">06</span><h4>Packed</h4></div></div>
       </div>
     </div>
   </section>
@@ -469,7 +491,7 @@ footer ul a:hover{color:var(--terracotta);}
         <div class="pullquote">"Manehly Handled" — With Care, By Hand, For Her</div>
         <p>Every garment is manually inspected thread by thread, hand-finished using traditional technique, and packed as if it were being sent to family.</p>
       </div>
-      <img src="https://picsum.photos/seed/std-about/700/880" alt="Artisan weaving on a traditional handloom">
+      <img src="assets/images/products/saree-12-stack-assorted.jpg" alt="Artisan weaving on a traditional handloom">
     </div>
   </section>
   <section class="alt-cream">
@@ -555,7 +577,7 @@ footer ul a:hover{color:var(--terracotta);}
         <div class="info-row"><b>WhatsApp Orders</b><span>+91 98XXX XXXXX</span></div>
         <div class="info-row"><b>Studio Address</b><span>Hastavam Textiles Studio, India</span></div>
         <div class="info-row"><b>Business Hours</b><span>Mon–Sat, 10:00 AM – 7:00 PM IST</span></div>
-        <a href="https://wa.me/919800000000" class="whatsapp-cta" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        <a href="https://wa.me/919800000000" class="whatsapp-cta" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg> Chat on WhatsApp</a>
         <div class="mapembed" role="img" aria-label="Map location placeholder"></div>
       </div>
       <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you — we will be in touch shortly.');this.reset();">
@@ -597,7 +619,7 @@ footer ul a:hover{color:var(--terracotta);}
         <div class="fab" id="mFab">Fabric</div>
         <p class="desc" id="mDesc">Description</p>
         <div class="btnrow">
-          <a href="https://wa.me/919800000000" target="_blank" rel="noopener" class="btn" style="background:#3f7a56;color:#fff;">Enquire on WhatsApp</a>
+          <a href="https://wa.me/919800000000" target="_blank" rel="noopener" class="btn whatsapp-cta" style="margin-top:0;"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg> Enquire on WhatsApp</a>
         </div>
         <p class="care">Care: Dry clean recommended. Store folded in muslin cloth away from direct sunlight.</p>
       </div>
@@ -635,57 +657,62 @@ footer ul a:hover{color:var(--terracotta);}
   </div>
 </footer>
 
+<a href="https://wa.me/919800000000" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-float-tip">Chat with us</span>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg>
+</a>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 /* ---------- product data ---------- */
 const PRODUCTS = {
   banarasi:{title:"Banarasi Silk Sarees",desc:"Rich zari work &amp; Mughal-inspired motifs, woven along the ghats of Varanasi",items:[
-    {name:"Zari Meena Banarasi",price:"₹18,500",fab:"Pure Katan Silk",seed:"b1"},
-    {name:"Royal Kadhwa Banarasi",price:"₹24,900",fab:"Pure Silk, Kadhwa Weave",seed:"b2"},
-    {name:"Ivory Tanchoi Banarasi",price:"₹16,200",fab:"Tanchoi Silk",seed:"b3"},
-    {name:"Rani Pink Jangla Banarasi",price:"₹21,000",fab:"Pure Silk, Jangla Weave",seed:"b4"},
+    {name:"Zari Meena Banarasi",price:"₹18,500",fab:"Pure Katan Silk",seed:"b1",img:"assets/images/products/saree-02-banarasi-pink.jpg"},
+    {name:"Royal Kadhwa Banarasi",price:"₹24,900",fab:"Pure Silk, Kadhwa Weave",seed:"b2",img:"assets/images/products/saree-01-red-gold-petals.jpg"},
+    {name:"Ivory Tanchoi Banarasi",price:"₹16,200",fab:"Tanchoi Silk",seed:"b3",img:"assets/images/products/saree-06-stack-jewel.jpg"},
+    {name:"Rani Pink Jangla Banarasi",price:"₹21,000",fab:"Pure Silk, Jangla Weave",seed:"b4",img:"assets/images/products/saree-04-red-purple-floral.jpg"},
   ]},
   kanjivaram:{title:"Kanjivaram Silk Sarees",desc:"South India's pride — bold colour, temple borders, pure mulberry silk",items:[
-    {name:"Temple Border Kanjivaram",price:"₹27,500",fab:"Pure Mulberry Silk",seed:"k1"},
-    {name:"Contrast Pallu Kanjivaram",price:"₹23,800",fab:"Pure Mulberry Silk",seed:"k2"},
-    {name:"Bridal Red Kanjivaram",price:"₹32,000",fab:"Pure Mulberry Silk, Zari",seed:"k3"},
-    {name:"Emerald Checks Kanjivaram",price:"₹19,900",fab:"Pure Mulberry Silk",seed:"k4"},
+    {name:"Temple Border Kanjivaram",price:"₹27,500",fab:"Pure Mulberry Silk",seed:"k1",img:"assets/images/products/saree-03-red-temple-border.jpg"},
+    {name:"Contrast Pallu Kanjivaram",price:"₹23,800",fab:"Pure Mulberry Silk",seed:"k2",img:"assets/images/products/saree-11-peach-pink-checks.jpg"},
+    {name:"Bridal Red Kanjivaram",price:"₹32,000",fab:"Pure Mulberry Silk, Zari",seed:"k3",img:"assets/images/products/saree-15-stack-jeweltone.jpg"},
+    {name:"Emerald Checks Kanjivaram",price:"₹19,900",fab:"Pure Mulberry Silk",seed:"k4",img:"assets/images/products/saree-05-red-black-stripe.jpg"},
   ]},
   chanderi:{title:"Chanderi Cotton-Silk",desc:"Sheer, lightweight elegance for daytime festivity and office wear",items:[
-    {name:"Sheer Butta Chanderi",price:"₹8,400",fab:"Cotton-Silk Blend",seed:"c1"},
-    {name:"Hand-block Chanderi Suit",price:"₹6,900",fab:"Chanderi Cotton",seed:"c2"},
-    {name:"Zari Border Chanderi",price:"₹9,600",fab:"Cotton-Silk Blend",seed:"c3"},
-    {name:"Pastel Chanderi Drape",price:"₹7,800",fab:"Chanderi Cotton",seed:"c4"},
+    {name:"Sheer Butta Chanderi",price:"₹8,400",fab:"Cotton-Silk Blend",seed:"c1",img:"assets/images/products/saree-09-mauve-floral.jpg"},
+    {name:"Hand-block Chanderi Suit",price:"₹6,900",fab:"Chanderi Cotton",seed:"c2",img:"assets/images/products/saree-07-peach-pink-border.jpg"},
+    {name:"Zari Border Chanderi",price:"₹9,600",fab:"Cotton-Silk Blend",seed:"c3",img:"assets/images/products/saree-08-stack-pastel.jpg"},
+    {name:"Pastel Chanderi Drape",price:"₹7,800",fab:"Chanderi Cotton",seed:"c4",img:"assets/images/products/saree-13-purple-pink-pleats.jpg"},
   ]},
   bandhani:{title:"Bandhani &amp; Leheriya",desc:"Rajasthan's tie-dye artistry, a joyful celebration of colour",items:[
-    {name:"Classic Bandhani Dupatta",price:"₹3,200",fab:"Pure Cotton",seed:"d1"},
-    {name:"Leheriya Silk Saree",price:"₹11,500",fab:"Silk, Leheriya Dye",seed:"d2"},
-    {name:"Gharchola Bandhani",price:"₹14,800",fab:"Silk, Bandhani Work",seed:"d3"},
-    {name:"Mothra Bandhani Stole",price:"₹2,600",fab:"Georgette",seed:"d4"},
+    {name:"Classic Bandhani Dupatta",price:"₹3,200",fab:"Pure Cotton",seed:"d1",img:"assets/images/products/saree-14-orange-navy-floral.jpg"},
+    {name:"Leheriya Silk Saree",price:"₹11,500",fab:"Silk, Leheriya Dye",seed:"d2",img:"assets/images/products/saree-16-stack-checks.jpg"},
+    {name:"Gharchola Bandhani",price:"₹14,800",fab:"Silk, Bandhani Work",seed:"d3",img:"assets/images/products/saree-05-red-black-stripe.jpg"},
+    {name:"Mothra Bandhani Stole",price:"₹2,600",fab:"Georgette",seed:"d4",img:"assets/images/products/saree-09-mauve-floral.jpg"},
   ]},
   bridal:{title:"Bridal &amp; Trousseau Edit",desc:"Heavy zari and hand embroidery for the bride who honours tradition",items:[
-    {name:"Kadhwa Bridal Banarasi",price:"₹42,000",fab:"Pure Silk, Kadhwa",seed:"e1"},
-    {name:"Kanjivaram Bridal Red",price:"₹38,500",fab:"Pure Mulberry Silk",seed:"e2"},
-    {name:"Zardozi Trousseau Saree",price:"₹45,900",fab:"Silk, Zardozi Embroidery",seed:"e3"},
-    {name:"Heritage Gold Bridal Set",price:"₹52,000",fab:"Silk, Heavy Zari",seed:"e4"},
+    {name:"Kadhwa Bridal Banarasi",price:"₹42,000",fab:"Pure Silk, Kadhwa",seed:"e1",img:"assets/images/products/saree-01-red-gold-petals.jpg"},
+    {name:"Kanjivaram Bridal Red",price:"₹38,500",fab:"Pure Mulberry Silk",seed:"e2",img:"assets/images/products/saree-03-red-temple-border.jpg"},
+    {name:"Zardozi Trousseau Saree",price:"₹45,900",fab:"Silk, Zardozi Embroidery",seed:"e3",img:"assets/images/products/saree-02-banarasi-pink.jpg"},
+    {name:"Heritage Gold Bridal Set",price:"₹52,000",fab:"Silk, Heavy Zari",seed:"e4",img:"assets/images/products/saree-12-stack-assorted.jpg"},
   ]},
   everyday:{title:"Everyday Handloom",desc:"Breathable cotton wear for daily grace",items:[
-    {name:"Handloom Cotton Saree",price:"₹3,800",fab:"Pure Cotton",seed:"f1"},
-    {name:"Block-Printed Kurti",price:"₹1,900",fab:"Cotton",seed:"f2"},
-    {name:"Everyday Chanderi Suit",price:"₹4,500",fab:"Chanderi Cotton",seed:"f3"},
-    {name:"Casual Handloom Dupatta",price:"₹1,400",fab:"Cotton",seed:"f4"},
+    {name:"Handloom Cotton Saree",price:"₹3,800",fab:"Pure Cotton",seed:"f1",img:"assets/images/products/saree-07-peach-pink-border.jpg"},
+    {name:"Block-Printed Kurti",price:"₹1,900",fab:"Cotton",seed:"f2",img:"assets/images/products/saree-11-peach-pink-checks.jpg"},
+    {name:"Everyday Chanderi Suit",price:"₹4,500",fab:"Chanderi Cotton",seed:"f3",img:"assets/images/products/saree-08-stack-pastel.jpg"},
+    {name:"Casual Handloom Dupatta",price:"₹1,400",fab:"Cotton",seed:"f4",img:"assets/images/products/saree-13-purple-pink-pleats.jpg"},
   ]},
   festive:{title:"Festive Drapes",desc:"Vibrant colour and zari artistry for every celebration",items:[
-    {name:"Festive Zari Saree",price:"₹15,000",fab:"Silk Blend, Zari",seed:"g1"},
-    {name:"Puja Silk Drape",price:"₹9,200",fab:"Pure Silk",seed:"g2"},
-    {name:"Celebration Kanjivaram",price:"₹26,400",fab:"Pure Mulberry Silk",seed:"g3"},
-    {name:"Golden Zari Banarasi",price:"₹22,300",fab:"Pure Silk",seed:"g4"},
+    {name:"Festive Zari Saree",price:"₹15,000",fab:"Silk Blend, Zari",seed:"g1",img:"assets/images/products/saree-14-orange-navy-floral.jpg"},
+    {name:"Puja Silk Drape",price:"₹9,200",fab:"Pure Silk",seed:"g2",img:"assets/images/products/saree-04-red-purple-floral.jpg"},
+    {name:"Celebration Kanjivaram",price:"₹26,400",fab:"Pure Mulberry Silk",seed:"g3",img:"assets/images/products/saree-03-red-temple-border.jpg"},
+    {name:"Golden Zari Banarasi",price:"₹22,300",fab:"Pure Silk",seed:"g4",img:"assets/images/products/saree-06-stack-jewel.jpg"},
   ]},
   western:{title:"Western Wear",desc:"Everyday western staples and indo-western fusion, tailored for daily comfort",items:[
-    {name:"Tailored Cotton Shirt",price:"₹2,200",fab:"Pure Cotton",seed:"w1"},
-    {name:"Indo-Western Co-ord Set",price:"₹4,200",fab:"Cotton-Silk Blend",seed:"w2"},
-    {name:"Relaxed Linen Trousers",price:"₹2,800",fab:"Pure Linen",seed:"w3"},
-    {name:"Handloom Denim Jacket",price:"₹5,600",fab:"Denim, Hand-finished",seed:"w4"},
+    {name:"Tailored Cotton Shirt",price:"₹2,200",fab:"Pure Cotton",seed:"w1",img:"assets/images/products/saree-13-purple-pink-pleats.jpg"},
+    {name:"Indo-Western Co-ord Set",price:"₹4,200",fab:"Cotton-Silk Blend",seed:"w2",img:"assets/images/products/saree-10-green-red-paithani.jpg"},
+    {name:"Relaxed Linen Trousers",price:"₹2,800",fab:"Pure Linen",seed:"w3",img:"assets/images/products/saree-05-red-black-stripe.jpg"},
+    {name:"Handloom Denim Jacket",price:"₹5,600",fab:"Denim, Hand-finished",seed:"w4",img:"assets/images/products/saree-09-mauve-floral.jpg"},
   ]}
 };
 
@@ -708,14 +735,14 @@ function renderHomeProducts(){
     const p = cat.items[pick.idx];
     return `
     <div class="pcard" style="animation-delay:${i*0.08}s">
-      <div class="pcard-img"><img src="https://picsum.photos/seed/std-${p.seed}/420/560" alt="${p.name}"></div>
+      <div class="pcard-img"><img src="${p.img}" alt="${p.name}"></div>
       <div class="pcard-body">
         <h4>${p.name}</h4>
         <div class="fab">${cat.title}</div>
         <div class="price">${p.price}</div>
         <div class="pcard-actions">
           <button class="view" onclick='openProduct(${JSON.stringify({...p,cat:cat.title})})'>View Details</button>
-          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">WhatsApp</a>
+          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg>WhatsApp</a>
         </div>
       </div>
     </div>`;
@@ -732,14 +759,14 @@ function openCategory(cat){
     const grid = document.getElementById('productGrid');
     grid.innerHTML = data.items.map((p,i)=>`
     <div class="pcard" style="animation-delay:${i*0.08}s">
-      <div class="pcard-img"><img src="https://picsum.photos/seed/std-${p.seed}/420/560" alt="${p.name}"></div>
+      <div class="pcard-img"><img src="${p.img}" alt="${p.name}"></div>
       <div class="pcard-body">
         <h4>${p.name}</h4>
         <div class="fab">${p.fab}</div>
         <div class="price">${p.price}</div>
         <div class="pcard-actions">
           <button class="view" onclick='openProduct(${JSON.stringify({...p,cat:data.title})})'>View Details</button>
-          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">WhatsApp</a>
+          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg>WhatsApp</a>
         </div>
       </div>
     </div>`).join('');
@@ -749,7 +776,7 @@ function openCategory(cat){
 }
 
 function openProduct(p){
-  document.getElementById('mImg').src = `https://picsum.photos/seed/std-${p.seed}/700/900`;
+  document.getElementById('mImg').src = p.img;
   document.getElementById('mImg').alt = p.name;
   document.getElementById('mCat').textContent = p.cat;
   document.getElementById('mName').textContent = p.name;
@@ -861,13 +888,13 @@ counters.forEach(c=>cIo.observe(c));
   if(!stage || typeof gsap === 'undefined') return;
 
   const FAN_CARDS = [
-    { imgUrl:'https://picsum.photos/seed/std-banarasi/500/650',   alt:'Banarasi silk saree',       label:'Banarasi Silk',    cat:'banarasi' },
-    { imgUrl:'https://picsum.photos/seed/std-kanjivaram/500/650', alt:'Kanjivaram silk saree',      label:'Kanjivaram Silk',  cat:'kanjivaram' },
-    { imgUrl:'https://picsum.photos/seed/std-bridal/500/650',     alt:'Bridal trousseau saree',     label:'Bridal Trousseau', cat:'bridal' },
-    { imgUrl:'https://picsum.photos/seed/std-chanderi/500/650',   alt:'Chanderi cotton-silk saree', label:'Chanderi Cotton',  cat:'chanderi' },
-    { imgUrl:'https://picsum.photos/seed/std-bandhani/500/650',   alt:'Bandhani tie-dye drape',     label:'Bandhani',         cat:'bandhani' },
-    { imgUrl:'https://picsum.photos/seed/std-everyday/500/650',   alt:'Everyday handloom saree',    label:'Everyday Handloom',cat:'everyday' },
-    { imgUrl:'https://picsum.photos/seed/std-western/500/650',    alt:'Western wear ensemble',      label:'Western Wear',     cat:'western' },
+    { imgUrl:'assets/images/products/saree-02-banarasi-pink.jpg',      alt:'Banarasi silk saree',       label:'Banarasi Silk',    cat:'banarasi' },
+    { imgUrl:'assets/images/products/saree-03-red-temple-border.jpg', alt:'Kanjivaram silk saree',      label:'Kanjivaram Silk',  cat:'kanjivaram' },
+    { imgUrl:'assets/images/products/saree-01-red-gold-petals.jpg',   alt:'Bridal trousseau saree',     label:'Bridal Trousseau', cat:'bridal' },
+    { imgUrl:'assets/images/products/saree-09-mauve-floral.jpg',      alt:'Chanderi cotton-silk saree', label:'Chanderi Cotton',  cat:'chanderi' },
+    { imgUrl:'assets/images/products/saree-14-orange-navy-floral.jpg',alt:'Bandhani tie-dye drape',     label:'Bandhani',         cat:'bandhani' },
+    { imgUrl:'assets/images/products/saree-07-peach-pink-border.jpg', alt:'Everyday handloom saree',    label:'Everyday Handloom',cat:'everyday' },
+    { imgUrl:'assets/images/products/saree-13-purple-pink-pleats.jpg',alt:'Western wear ensemble',      label:'Western Wear',     cat:'western' },
   ];
 
   const FAN_POSITIONS = [
