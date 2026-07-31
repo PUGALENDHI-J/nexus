@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hastavam Textiles | Traditional &amp; Western Women's Wear</title>
+<meta name="description" content="Discover Hastavam Textiles — authentic handwoven sarees, Banarasi silk, Kanjivaram, and a curated range of western wear, crafted with care by artisans and makers across India. Shop traditional and western fashion, ethically made.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B5654A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF6EF; --cream:#F1E7D6; --sand:#E3D0B0; --terracotta:#B5654A;
+  --earth-brown:#6B4226; --deep-brown:#241811; --gold:#A98449; --maxw:1240px; --radius:10px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--deep-brown);line-height:1.65;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+@media(max-width:640px){.wrap{padding:0 20px;}}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--terracotta);}
+button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;} html{scroll-behavior:auto;}}
+
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .35s ease;padding:22px 0;}
+header.scrolled{padding:12px 0;background:rgba(250,246,239,.9);backdrop-filter:blur(10px);box-shadow:0 8px 24px -18px rgba(36,24,17,.4);border-bottom:1px solid rgba(36,24,17,.06);}
+.nav{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:700;}
+.logo-mark{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;display:block;}
+.navlinks{display:flex;gap:30px;font-size:.9rem;font-weight:600;letter-spacing:.02em;}
+.navlinks button{background:none;border:none;color:inherit;cursor:pointer;padding:6px 0;position:relative;font-size:.9rem;font-weight:600;}
+.navlinks button:after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--terracotta);transition:width .25s;}
+.navlinks button.active:after,.navlinks button:hover:after{width:100%;}
+.navlinks button.active{color:var(--terracotta);}
+.navcta{background:var(--deep-brown);color:var(--ivory);padding:11px 24px;border-radius:30px;font-size:.85rem;font-weight:700;border:none;cursor:pointer;}
+.navcta:hover{background:var(--terracotta);}
+.burger{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;}
+@media(max-width:900px){.navlinks{display:none;} .navcta{display:none;} .burger{display:block;}}
+
+.mobile-menu{position:fixed;inset:0;background:var(--ivory);z-index:200;display:none;flex-direction:column;padding:26px 24px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;}
+.mobile-menu button.mlink{background:none;border:none;text-align:left;font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;padding:14px 0;border-bottom:1px solid rgba(36,24,17,.1);color:var(--deep-brown);}
+
+main{padding-top:96px;}
+.page{display:none;}
+.page.active{display:block;}
+
+/* ===== HERO (full-bleed cinematic) ===== */
+.hero{position:relative;overflow:hidden;min-height:88vh;display:flex;align-items:center;padding:0;margin-top:-96px;}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-bg video{width:100%;height:100%;object-fit:cover;filter:sepia(.22) saturate(1.05) brightness(.6);animation:kenburns 20s ease-in-out infinite alternate;}
+@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.09);}}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,24,17,.32) 0%,rgba(36,24,17,.42) 45%,rgba(36,24,17,.88) 100%);}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:150px 24px 70px;color:var(--ivory);}
+.hero-content p{max-width:52ch;color:rgba(250,246,239,.85);font-size:1.08rem;margin:0 auto 30px;}
+.hero-content .btnrow{justify-content:center;}
+.hero-content .trust{justify-content:center;color:rgba(250,246,239,.8);}
+.trust{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:.82rem;color:var(--earth-brown);font-weight:600;}
+.trust span{display:flex;align-items:center;gap:6px;}
+.btnrow{display:flex;gap:16px;flex-wrap:wrap;}
+.btn{padding:15px 30px;border-radius:30px;font-weight:700;font-size:.9rem;display:inline-block;border:none;cursor:pointer;transition:all .25s ease;letter-spacing:.02em;}
+.btn-primary{background:var(--terracotta);color:#fff;}
+.btn-primary:hover{background:var(--earth-brown);transform:translateY(-2px);}
+.hero-content .btn-ghost{border:1.5px solid rgba(250,246,239,.65);background:none;color:var(--ivory);}
+.hero-content .btn-ghost:hover{background:var(--ivory);color:var(--deep-brown);}
+.btn-ghost{border:1.5px solid var(--deep-brown);background:none;color:var(--deep-brown);}
+.btn-ghost:hover{background:var(--deep-brown);color:var(--ivory);}
+.hero-mute{position:absolute;bottom:22px;right:calc(50% - 620px + 24px);z-index:5;}
+@media(max-width:1310px){.hero-mute{right:24px;}}
+.mute-btn{width:40px;height:40px;border-radius:50%;border:none;background:rgba(0,0,0,.5);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(4px);}
+.mute-btn:hover{background:rgba(0,0,0,.75);}
+.mute-icon{width:20px;height:20px;}
+.mute-icon.hidden{display:none;}
+
+/* ===== PREMIUM HERO EXTRAS (Standard) ===== */
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:30px;background:rgba(250,246,239,.14);border:1px solid rgba(250,246,239,.3);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;}
+.hero-kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--terracotta);animation:pulseDot 1.7s ease-in-out infinite;}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(1.5);}}
+.hero-content h1{color:var(--ivory);font-size:clamp(2.8rem,6vw,5rem);line-height:1.05;margin:0 0 24px;}
+.hero-content h1 .hw{display:inline-block;opacity:0;transform:translateY(28px);animation:hwIn .85s cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes hwIn{to{opacity:1;transform:none;}}
+#heroRotate{color:#e2a877;display:inline-block;transition:opacity .3s ease;}
+.hero-rating-chip{position:absolute;top:110px;right:6%;z-index:5;background:rgba(250,246,239,.96);border-radius:14px;padding:12px 18px;box-shadow:0 18px 36px -14px rgba(0,0,0,.5);display:flex;align-items:center;gap:12px;animation:floatY 4.2s ease-in-out infinite;}
+.hero-rating-chip .stars{color:var(--gold);font-size:.85rem;letter-spacing:1px;line-height:1;}
+.hero-rating-chip b{display:block;font-size:1rem;font-family:'Cormorant Garamond',serif;color:var(--deep-brown);}
+.hero-rating-chip span{font-size:.7rem;color:var(--earth-brown);white-space:nowrap;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@media(max-width:900px){.hero-rating-chip{display:none;}}
+
+.hero-stats{position:relative;z-index:3;margin:-54px auto 0;max-width:960px;background:#fff;border-radius:16px;box-shadow:0 30px 60px -20px rgba(36,24,17,.35);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;}
+.hstat{padding:26px 14px;text-align:center;border-right:1px solid rgba(36,24,17,.08);}
+.hstat:last-child{border-right:none;}
+.hstat b{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terracotta);}
+.hstat span{font-size:.76rem;color:var(--earth-brown);font-weight:600;}
+@media(max-width:820px){.hero-stats{grid-template-columns:repeat(2,1fr);}.hstat:nth-child(2){border-right:none;}}
+@media(max-width:640px){.hero-content{padding:120px 20px 50px;}.hero-stats{margin-top:-34px;}.hstat{padding:18px 10px;}.hstat b{font-size:1.5rem;}}
+
+/* ===== SECTION HEADS ===== */
+section{padding:90px 0;}
+@media(max-width:640px){section{padding:56px 0;}}
+.sechead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px;}
+.sechead h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin:8px 0 0;}
+.sechead .link{font-weight:700;font-size:.88rem;color:var(--terracotta);white-space:nowrap;}
+.sechead .link:hover{text-decoration:underline;}
+.center{text-align:center;}
+.center .sechead{display:block;}
+.divider{width:64px;height:2px;background:var(--gold);margin:16px auto 0;}
+
+/* ===== FEATURED COLLECTIONS ===== */
+.alt-cream{background:var(--cream);}
+.grid4c{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+@media(max-width:980px){.grid4c{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.grid4c{grid-template-columns:1fr;}}
+.ccard{border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 10px 26px -18px rgba(36,24,17,.4);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;}
+.ccard:hover{transform:translateY(-6px);box-shadow:0 20px 40px -18px rgba(36,24,17,.45);}
+.ccard-img{aspect-ratio:4/5;overflow:hidden;}
+.ccard-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(1.1);transition:transform .5s ease;}
+.ccard:hover .ccard-img img{transform:scale(1.06);}
+.ccard-body{padding:18px 18px 22px;}
+.ccard-body h3{margin:0 0 4px;font-size:1.25rem;}
+.ccard-body span{font-size:.85rem;color:var(--earth-brown);}
+
+/* ===== FAN SHOWCASE (animated, Standard only) ===== */
+.fan-showcase{padding-top:20px;}
+.fan-hint{text-align:center;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--earth-brown);opacity:.65;margin-top:26px;}
+.fan-stage{position:relative;height:34rem;display:flex;justify-content:center;align-items:flex-end;margin:10px auto 0;max-width:76rem;}
+@media(max-width:1100px){.fan-stage{height:27rem;}}
+@media(max-width:900px){.fan-stage{height:22rem;}}
+@media(max-width:640px){.fan-stage{height:15.5rem;}}
+.fan-card{position:absolute;bottom:0;width:16rem;aspect-ratio:3/4.2;border-radius:14px;overflow:hidden;box-shadow:0 26px 50px -18px rgba(36,24,17,.5);border:3px solid #fff;cursor:pointer;background:var(--sand);}
+@media(max-width:1100px){.fan-card{width:13rem;}}
+@media(max-width:900px){.fan-card{width:10.5rem;}}
+.fan-card img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(1.1);}
+.fan-card .fan-label{position:absolute;left:0;right:0;bottom:0;padding:14px 10px 10px;background:linear-gradient(180deg,transparent,rgba(20,12,8,.82));color:#fff;font-size:.8rem;font-weight:700;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease;}
+.fan-card:hover .fan-label{opacity:1;transform:none;}
+/* On mobile the overlapping fan arc is hard to see and tap, so cards stack one below another instead */
+@media(max-width:760px){
+  .fan-stage{position:static;height:auto;display:flex;flex-direction:column;align-items:center;gap:16px;max-width:340px;}
+  .fan-card{position:static!important;transform:none!important;width:100%!important;max-width:340px;aspect-ratio:3/4;}
+  .fan-card .fan-label{opacity:1!important;transform:none!important;font-size:.8rem;padding:14px 12px 10px;}
+}
+
+/* stats / why */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+@media(max-width:820px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--terracotta);}
+.stat span{font-size:.85rem;color:var(--earth-brown);font-weight:600;}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.grid4{grid-template-columns:1fr;}}
+.valuecard{padding:30px 22px;text-align:left;border-radius:var(--radius);background:#fff;border:1px solid rgba(36,24,17,.08);}
+.valuecard .num{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-weight:700;}
+.valuecard h3{font-size:1.15rem;margin:10px 0 8px;}
+.valuecard p{font-size:.9rem;color:var(--earth-brown);margin:0;}
+
+/* craftsmanship timeline */
+.timeline{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+@media(max-width:980px){.timeline{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){.timeline{grid-template-columns:1fr;}}
+.tstep{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(36,24,17,.08);}
+.tstep-img{aspect-ratio:1/1;overflow:hidden;}
+.tstep-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.2) saturate(1.1);}
+.tstep-body{padding:14px 14px 18px;}
+.tstep-body .num{color:var(--terracotta);font-weight:700;font-family:'Cormorant Garamond',serif;font-size:1.3rem;}
+.tstep-body h4{font-size:1rem;margin:4px 0 0;}
+
+/* product / category page */
+.page-hero{padding:150px 0 40px;background:var(--cream);}
+.page-hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:10px 0 12px;}
+.page-hero p{max-width:60ch;color:var(--earth-brown);}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+.tab{padding:10px 20px;border-radius:30px;border:1.5px solid rgba(36,24,17,.18);font-size:.85rem;font-weight:700;background:none;cursor:pointer;color:var(--deep-brown);}
+.tab.active,.tab:hover{background:var(--terracotta);border-color:var(--terracotta);color:#fff;}
+
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+@media(max-width:980px){.pgrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.pgrid{grid-template-columns:1fr;}}
+.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(36,24,17,.08);opacity:0;transform:translateY(14px);animation:fadein .5s forwards;}
+.pcard-img{aspect-ratio:3/4;overflow:hidden;position:relative;}
+.pcard-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(1.1);}
+.pcard-body{padding:16px 18px 20px;}
+.pcard-body h4{font-size:1.05rem;margin:0 0 4px;font-weight:600;font-family:'DM Sans',sans-serif;}
+.pcard-body .fab{font-size:.78rem;color:var(--earth-brown);margin-bottom:8px;}
+.pcard-body .price{font-weight:700;color:var(--terracotta);font-size:1rem;margin-bottom:12px;}
+.pcard-actions{display:flex;gap:8px;}
+.pcard-actions button{flex:1;padding:9px 8px;font-size:.76rem;font-weight:700;border-radius:20px;cursor:pointer;border:1.5px solid var(--deep-brown);background:none;}
+.pcard-actions .view{background:var(--deep-brown);color:#fff;border-color:var(--deep-brown);}
+.pcard-actions .wa{color:#3f7a56;border-color:#3f7a56;}
+@keyframes fadein{to{opacity:1;transform:none;}}
+
+/* modal */
+.modal-bg{position:fixed;inset:0;background:rgba(36,24,17,.55);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--ivory);max-width:880px;width:100%;max-height:88vh;overflow-y:auto;border-radius:14px;position:relative;}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:#fff;border:none;font-size:1.1rem;cursor:pointer;z-index:2;}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;}
+@media(max-width:700px){.modal-grid{grid-template-columns:1fr;}}
+.modal-img{aspect-ratio:4/5;overflow:hidden;}
+.modal-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(1.1);}
+.modal-body{padding:34px 34px;}
+.modal-body h3{font-size:1.7rem;margin:0 0 6px;}
+.modal-body .price{color:var(--terracotta);font-size:1.2rem;font-weight:700;margin-bottom:14px;}
+.modal-body .fab{font-size:.85rem;color:var(--earth-brown);margin-bottom:16px;}
+.modal-body p.desc{font-size:.92rem;color:var(--earth-brown);margin-bottom:20px;}
+.care{font-size:.82rem;color:var(--earth-brown);border-top:1px solid rgba(36,24,17,.1);padding-top:16px;}
+
+/* testimonials */
+.testi-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.testi-wrap{grid-template-columns:1fr;}}
+.tcard{background:#fff;padding:30px 26px;border-radius:var(--radius);border:1px solid rgba(36,24,17,.08);}
+.tcard .quote{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--terracotta);line-height:1;}
+.tcard p{font-size:.95rem;color:var(--earth-brown);margin:10px 0 18px;}
+.tcard .who{font-weight:700;font-size:.88rem;}
+
+/* newsletter */
+.newsletter{background:var(--deep-brown);color:var(--ivory);border-radius:14px;padding:50px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;}
+.newsletter h3{font-size:1.7rem;margin:0 0 8px;}
+.newsletter p{color:rgba(250,246,239,.7);max-width:40ch;margin:0;}
+.nform{display:flex;gap:10px;}
+.nform input{padding:13px 18px;border-radius:30px;border:none;min-width:230px;font-family:inherit;}
+@media(max-width:600px){.nform{width:100%;} .nform input{min-width:0;flex:1;}}
+
+/* about page */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
+.about-grid img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;filter:sepia(.18) saturate(1.1);}
+.pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--terracotta);border-left:3px solid var(--gold);padding-left:20px;margin:26px 0;}
+.artisan-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:820px){.artisan-grid{grid-template-columns:1fr;}}
+.artisan{display:flex;gap:18px;background:#fff;padding:22px;border-radius:var(--radius);border:1px solid rgba(36,24,17,.08);}
+.artisan img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex:none;filter:sepia(.18) saturate(1.1);}
+.artisan p{font-style:italic;font-size:.92rem;color:var(--earth-brown);margin:0 0 8px;}
+.artisan .who{font-size:.82rem;font-weight:700;}
+
+/* contact page */
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+@media(max-width:900px){.contact-inner{grid-template-columns:1fr;}}
+.info-row{display:flex;gap:12px;margin-bottom:16px;font-size:.92rem;}
+.info-row b{min-width:120px;}
+.whatsapp-cta{display:inline-flex;align-items:center;gap:10px;background:#3f7a56;color:#fff;padding:13px 26px;border-radius:30px;font-weight:700;margin-top:6px;}
+form.contact-form{display:flex;flex-direction:column;gap:14px;}
+input,textarea{font-family:'DM Sans',sans-serif;font-size:.92rem;padding:13px 16px;border:1px solid rgba(36,24,17,.2);border-radius:8px;background:#fff;color:var(--deep-brown);}
+textarea{min-height:110px;resize:vertical;}
+.mapembed{height:220px;border-radius:var(--radius);background:var(--sand) url('https://picsum.photos/seed/hastavam-map/700/400') center/cover;margin-top:20px;filter:sepia(.15);}
+
+footer{background:var(--deep-brown);color:var(--cream);padding:64px 0 26px;margin-top:0;}
+.foot-inner{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+@media(max-width:820px){.foot-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.foot-inner{grid-template-columns:1fr;}}
+footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sand);margin-bottom:16px;}
+footer .logo{color:var(--ivory);}
+footer p{color:rgba(241,231,214,.7);font-size:.9rem;max-width:34ch;}
+footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:.9rem;}
+footer ul a{color:rgba(241,231,214,.85);}
+footer ul a:hover{color:var(--terracotta);}
+.foot-bottom{border-top:1px solid rgba(241,231,214,.15);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:rgba(241,231,214,.6);}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ===== CURTAIN PAGE TRANSITION ===== */
+.page-transition{position:fixed;inset:0;z-index:500;pointer-events:none;}
+.page-transition svg{width:100%;height:100%;display:block;}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="#" class="logo" onclick="goPage('home');return false;"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles</a>
+    <nav class="navlinks" id="navlinks">
+      <button class="active" data-page="home" onclick="goPage('home')">Home</button>
+      <button data-page="about" onclick="goPage('about')">About</button>
+      <button data-page="collections" onclick="goPage('collections')">Collections</button>
+      <button data-page="craft" onclick="goPage('craft')">Craftsmanship</button>
+      <button data-page="testimonials" onclick="goPage('testimonials')">Testimonials</button>
+      <button data-page="contact" onclick="goPage('contact')">Contact</button>
+    </nav>
+    <button class="navcta" onclick="goPage('collections')">Explore Collection</button>
+    <button class="burger" onclick="document.getElementById('mmenu').classList.add('open')" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu">
+  <div class="top">
+    <span class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam</span>
+    <button class="burger" onclick="document.getElementById('mmenu').classList.remove('open')" aria-label="Close menu">✕</button>
+  </div>
+  <button class="mlink" onclick="goPage('home')">Home</button>
+  <button class="mlink" onclick="goPage('about')">About</button>
+  <button class="mlink" onclick="goPage('collections')">Collections</button>
+  <button class="mlink" onclick="goPage('craft')">Craftsmanship</button>
+  <button class="mlink" onclick="goPage('testimonials')">Testimonials</button>
+  <button class="mlink" onclick="goPage('contact')">Contact</button>
+</div>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-bg">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-label="Hastavam Textiles handwoven saree showcase">
+        <source src="assets/video/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <button class="mute-btn hero-mute" id="muteBtn" aria-label="Unmute video" onclick="toggleMute()">
+      <svg class="mute-icon" id="muteIconOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+      <svg class="mute-icon hidden" id="muteIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>
+    <div class="hero-rating-chip"><span class="stars">★★★★★</span><div><b>4.9/5</b><span>12,000+ happy customers</span></div></div>
+    <div class="wrap hero-content reveal in">
+      <span class="hero-kicker"><span class="dot"></span>Heritage Edition · Traditional &amp; Western Wear</span>
+      <h1><span class="hw" style="animation-delay:.05s">Timeless</span> <span class="hw" style="animation-delay:.16s">Weaves,</span><br><span class="hw" style="animation-delay:.27s">Modern</span> <span class="hw" style="animation-delay:.38s" id="heroRotate">Grace.</span></h1>
+      <p>Hastavam Textiles brings you the timeless grace of traditional Indian craftsmanship alongside a thoughtfully chosen western wear range — handpicked fabrics, handwoven sarees, and everyday styles for the woman who never forgets her roots.</p>
+      <div class="btnrow">
+        <button class="btn btn-primary" onclick="goPage('collections')">Explore Collections</button>
+        <button class="btn btn-ghost" onclick="goPage('about')">Our Story</button>
+      </div>
+      <div class="trust">
+        <span>✔ Pan-India Delivery</span><span>✔ 100% Handloom Certified</span><span>✔ Direct-from-Artisan</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-stats reveal in">
+      <div class="hstat"><b>5</b><span>Weaving Regions</span></div>
+      <div class="hstat"><b>220+</b><span>Artisan Families</span></div>
+      <div class="hstat"><b>100%</b><span>Handloom Certified</span></div>
+      <div class="hstat"><b>7</b><span>Signature Collections</span></div>
+    </div>
+  </div>
+
+  <!-- ============ FAN SHOWCASE (animated) ============ -->
+  <section class="fan-showcase">
+    <div class="wrap">
+      <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Style in Motion</p><h2>Signature Drapes, Fanned Out</h2></div>
+      <div class="fan-stage" id="fanStage"></div>
+      <p class="fan-hint">Hover a drape to bring it forward — click to explore that collection</p>
+    </div>
+  </section>
+
+  <section class="alt-cream">
+    <div class="wrap">
+      <div class="sechead reveal">
+        <div><p class="eyebrow">Explore Our Craft</p><h2>Traditional &amp; Western Collections</h2></div>
+        <button class="link" style="background:none;border:none;cursor:pointer;" onclick="goPage('collections')">View All Collections →</button>
+      </div>
+      <div class="grid4c reveal">
+        <div class="ccard" onclick="openCategory('banarasi')">
+          <div class="ccard-img"><img src="https://picsum.photos/seed/std-banarasi/500/620" alt="Banarasi silk saree"></div>
+          <div class="ccard-body"><h3>Banarasi Elegance</h3><span>Timeless silk sarees for weddings &amp; celebrations</span></div>
+        </div>
+        <div class="ccard" onclick="openCategory('everyday')">
+          <div class="ccard-img"><img src="https://picsum.photos/seed/std-everyday/500/620" alt="Everyday handloom wear"></div>
+          <div class="ccard-body"><h3>Everyday Handloom</h3><span>Breathable cotton wear for daily grace</span></div>
+        </div>
+        <div class="ccard" onclick="openCategory('bridal')">
+          <div class="ccard-img"><img src="https://picsum.photos/seed/std-bridal/500/620" alt="Bridal trousseau"></div>
+          <div class="ccard-body"><h3>Bridal Trousseau</h3><span>Curated ensembles for tradition, not trends</span></div>
+        </div>
+        <div class="ccard" onclick="openCategory('western')">
+          <div class="ccard-img"><img src="https://picsum.photos/seed/std-western/500/620" alt="Western tops and indo-western sets"></div>
+          <div class="ccard-body"><h3>Western Wear</h3><span>Everyday western staples &amp; indo-western sets</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sechead reveal">
+        <div><p class="eyebrow">Shop Bestsellers</p><h2>Collections, With a Price Tag</h2></div>
+        <button class="link" style="background:none;border:none;cursor:pointer;" onclick="goPage('collections')">View All Collections →</button>
+      </div>
+      <div class="pgrid reveal" id="homeProductGrid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Why Hastavam</p><h2>A Promise in Every Thread</h2></div>
+      <div class="grid4 reveal">
+        <div class="valuecard"><div class="num">01</div><h3>Handcrafted, Always</h3><p>Every saree, kurti and western top passes through human hands before it reaches yours.</p></div>
+        <div class="valuecard"><div class="num">02</div><h3>Rooted in Ethics</h3><p>We partner directly with weaver communities and makers — fair wages, honest craft, sustainable practice.</p></div>
+        <div class="valuecard"><div class="num">03</div><h3>Traditional, Meet Western</h3><p>From Banarasi silks to Kanjivaram, Chanderi to Bandhani, and everyday western staples — a curated journey.</p></div>
+        <div class="valuecard"><div class="num">04</div><h3>Designed for Real Women</h3><p>Comfort-first silhouettes that celebrate every body, every age, every occasion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-cream">
+    <div class="wrap">
+      <div class="stats-grid reveal">
+        <div class="stat"><b class="counter" data-target="5">0</b><span>Weaving Regions Partnered</span></div>
+        <div class="stat"><b class="counter" data-target="220">0</b><span>Artisan Families Supported</span></div>
+        <div class="stat"><b class="counter" data-target="100">0</b><span>% Handloom Certified</span></div>
+        <div class="stat"><b class="counter" data-target="7">0</b><span>Signature Weave Collections</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sechead reveal"><div><p class="eyebrow">From Thread to Drape</p><h2>Craftsmanship Preview</h2></div>
+        <button class="link" style="background:none;border:none;cursor:pointer;" onclick="goPage('craft')">See Full Process →</button></div>
+      <div class="timeline reveal">
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t1/300/300" alt="Sourcing raw silk"></div><div class="tstep-body"><span class="num">01</span><h4>Sourcing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t2/300/300" alt="Handweaving on the loom"></div><div class="tstep-body"><span class="num">02</span><h4>Weaving</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t3/300/300" alt="Traditional dyeing"></div><div class="tstep-body"><span class="num">03</span><h4>Dyeing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t4/300/300" alt="Hand finishing"></div><div class="tstep-body"><span class="num">04</span><h4>Finishing</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t5/300/300" alt="Quality assurance check"></div><div class="tstep-body"><span class="num">05</span><h4>Quality</h4></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-t6/300/300" alt="Packed with care"></div><div class="tstep-body"><span class="num">06</span><h4>Packed</h4></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-cream">
+    <div class="wrap">
+      <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Meet the Hands Behind Hastavam</p><h2>The Artisan Story</h2></div>
+      <div class="artisan-grid reveal">
+        <div class="artisan"><img src="https://picsum.photos/seed/std-radha/150/150" alt="Radha Devi, master weaver"><div><p>"I have been weaving for twenty-two years. With Hastavam, for the first time, I know exactly who wears what I make."</p><div class="who">Radha Devi, Master Weaver, Chanderi</div></div></div>
+        <div class="artisan"><img src="https://picsum.photos/seed/std-fatima/150/150" alt="Fatima Bano, artisan"><div><p>"My mother taught me Bandhani when I was twelve. Now my daughter learns it too — because Hastavam gives us work that lasts."</p><div class="who">Fatima Bano, Artisan, Jaipur</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="wrap">
+      <div class="sechead reveal" style="display:block;"><p class="eyebrow">Kind Words</p><h2>Testimonials</h2></div>
+      <div class="testi-wrap reveal">
+        <div class="tcard"><span class="quote">"</span><p>I wore a Hastavam Kanjivaram to my sister's wedding — I have never received so many compliments on a saree in my life.</p><div class="who">Anjali R., Kochi</div></div>
+        <div class="tcard"><span class="quote">"</span><p>Finally, a brand that doesn't compromise on authenticity. You can feel the difference in the fabric.</p><div class="who">Meera S., Bengaluru</div></div>
+        <div class="tcard"><span class="quote">"</span><p>I love that I can shop my traditional saree and my everyday western pieces from the same place — the quality never dips.</p><div class="who">Priya N., Delhi</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="newsletter reveal">
+        <div><h3>Join the Hastavam Family</h3><p>Get early access to new collections, weaver stories, and festive offers — straight to your inbox.</p></div>
+        <form class="nform" onsubmit="event.preventDefault();alert('Thank you for subscribing.');this.reset();">
+          <input type="email" placeholder="Your email address" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" id="page-about">
+  <div class="page-hero"><div class="wrap"><p class="eyebrow">About Us</p><h1>From Hands, For Hearts</h1><p>Hastavam Textiles was born from a simple belief: that clothing should carry a story, not just a size tag.</p></div></div>
+  <section>
+    <div class="wrap about-grid reveal">
+      <div>
+        <p>It began with a visit to a quiet weaving village, where the rhythmic clatter of handlooms echoed stories older than most cities. We watched artisans — many of them women — pour weeks into a single saree, only to see their craft fade beneath the noise of fast fashion and machine imitation. We chose to do something about it.</p>
+        <p>Today, we walk alongside artisan clusters in Varanasi, Chanderi, Kanchipuram, Jaipur and Bengal — bringing their heritage weaves straight to your wardrobe, without middlemen, without markup, and without ever losing the soul of the craft. Alongside these traditional weaves, we've built a western wear range with the same care and attention to detail.</p>
+        <div class="pullquote">"Manehly Handled" — With Care, By Hand, For Her</div>
+        <p>Every garment is manually inspected thread by thread, hand-finished using traditional technique, and packed as if it were being sent to family.</p>
+      </div>
+      <img src="https://picsum.photos/seed/std-about/700/880" alt="Artisan weaving on a traditional handloom">
+    </div>
+  </section>
+  <section class="alt-cream">
+    <div class="wrap">
+      <div class="grid4 reveal" style="grid-template-columns:1fr 1fr;">
+        <div class="valuecard"><h3>Our Mission</h3><p>To preserve India's textile heritage by empowering artisan communities, while making traditional Indian clothing accessible, elegant and effortlessly wearable for the contemporary woman.</p></div>
+        <div class="valuecard"><h3>Our Vision</h3><p>A world where every wardrobe holds at least one handwoven story — where tradition is never left behind, but worn forward, with pride.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Meet the Hands Behind Hastavam</p><h2>Our Artisans</h2></div>
+      <div class="artisan-grid reveal">
+        <div class="artisan"><img src="https://picsum.photos/seed/std-radha2/150/150" alt="Radha Devi portrait"><div><p>"I have been weaving for twenty-two years. With Hastavam, for the first time, I know exactly who wears what I make."</p><div class="who">Radha Devi, Master Weaver, Chanderi</div></div></div>
+        <div class="artisan"><img src="https://picsum.photos/seed/std-fatima2/150/150" alt="Fatima Bano portrait"><div><p>"My mother taught me Bandhani when I was twelve. Now my daughter learns it too — because Hastavam gives us work that lasts."</p><div class="who">Fatima Bano, Artisan, Jaipur</div></div></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ COLLECTIONS ============ -->
+<section class="page" id="page-collections">
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Explore Our Craft</p><h1>Collections</h1>
+      <p>Seven signature weaves, curated across India's most storied textile regions. Choose a collection to view pieces.</p>
+      <div class="tabs" id="catTabs">
+        <button class="tab active" data-cat="banarasi" onclick="openCategory('banarasi')">Banarasi Silk</button>
+        <button class="tab" data-cat="kanjivaram" onclick="openCategory('kanjivaram')">Kanjivaram Silk</button>
+        <button class="tab" data-cat="chanderi" onclick="openCategory('chanderi')">Chanderi Cotton-Silk</button>
+        <button class="tab" data-cat="bandhani" onclick="openCategory('bandhani')">Bandhani &amp; Leheriya</button>
+        <button class="tab" data-cat="bridal" onclick="openCategory('bridal')">Bridal &amp; Trousseau</button>
+        <button class="tab" data-cat="everyday" onclick="openCategory('everyday')">Everyday Wear</button>
+        <button class="tab" data-cat="western" onclick="openCategory('western')">Western Wear</button>
+      </div>
+    </div>
+  </div>
+  <section style="padding-top:50px;">
+    <div class="wrap">
+      <div class="sechead reveal in"><h2 id="catTitle" style="font-size:2rem;">Banarasi Silk Sarees</h2><span class="eyebrow" id="catDesc">Rich zari work &amp; Mughal-inspired motifs, woven along the ghats of Varanasi</span></div>
+      <div class="pgrid" id="productGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CRAFTSMANSHIP ============ -->
+<section class="page" id="page-craft">
+  <div class="page-hero"><div class="wrap"><p class="eyebrow">Craftsmanship &amp; Process</p><h1>From Thread to Drape</h1><p>Every Hastavam piece passes through six deliberate stages — because "manehly handled" is a promise, not a tagline.</p></div></div>
+  <section>
+    <div class="wrap">
+      <div class="timeline reveal in" style="grid-template-columns:repeat(3,1fr);">
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c1/400/400" alt="Sourcing raw silk and dyes"></div><div class="tstep-body"><span class="num">01</span><h4>Sourcing</h4><p style="font-size:.85rem;color:var(--earth-brown);">We travel directly to weaving clusters, sourcing raw silk, cotton and dyes from trusted regional hands.</p></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c2/400/400" alt="Skilled artisans weaving"></div><div class="tstep-body"><span class="num">02</span><h4>Weaving</h4><p style="font-size:.85rem;color:var(--earth-brown);">Skilled artisans, many carrying forward family tradition, spend days to weeks handweaving each piece.</p></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c3/400/400" alt="Bandhani and block printing"></div><div class="tstep-body"><span class="num">03</span><h4>Dyeing &amp; Printing</h4><p style="font-size:.85rem;color:var(--earth-brown);">Traditional techniques like Bandhani, Leheriya and hand block printing bring each fabric to life.</p></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c4/400/400" alt="Hand finishing garments"></div><div class="tstep-body"><span class="num">04</span><h4>Finishing</h4><p style="font-size:.85rem;color:var(--earth-brown);">Every piece is hand-checked for thread quality, symmetry and finish before it reaches packaging.</p></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c5/400/400" alt="Quality assurance inspection"></div><div class="tstep-body"><span class="num">05</span><h4>Quality Assurance</h4><p style="font-size:.85rem;color:var(--earth-brown);">Our in-house team inspects every garment, because "manehly handled" is a promise, not a tagline.</p></div></div>
+        <div class="tstep"><div class="tstep-img"><img src="https://picsum.photos/seed/std-c6/400/400" alt="Eco-conscious packaging"></div><div class="tstep-body"><span class="num">06</span><h4>Packed With Care</h4><p style="font-size:.85rem;color:var(--earth-brown);">Eco-conscious packaging, wrapped like a gift — because that is exactly what it is.</p></div></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ TESTIMONIALS PAGE ============ -->
+<section class="page" id="page-testimonials">
+  <div class="page-hero"><div class="wrap"><p class="eyebrow">Kind Words</p><h1>What Our Customers Say</h1></div></div>
+  <section>
+    <div class="wrap testi-wrap reveal in">
+      <div class="tcard"><span class="quote">"</span><p>I wore a Hastavam Kanjivaram to my sister's wedding — I have never received so many compliments on a saree in my life.</p><div class="who">Anjali R., Kochi</div></div>
+      <div class="tcard"><span class="quote">"</span><p>Finally, a brand that doesn't compromise on authenticity. You can feel the difference in the fabric.</p><div class="who">Meera S., Bengaluru</div></div>
+      <div class="tcard"><span class="quote">"</span><p>I love that I can shop my traditional saree and my everyday western pieces from the same place — the quality never dips.</p><div class="who">Priya N., Delhi</div></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" id="page-contact">
+  <div class="page-hero"><div class="wrap"><p class="eyebrow">Let's Talk Tradition</p><h1>Contact Us</h1><p>We'd love to hear from you — whether it's a question about a saree, a custom order, or simply to say namaste.</p></div></div>
+  <section>
+    <div class="wrap contact-inner reveal in">
+      <div>
+        <div class="info-row"><b>Customer Care</b><span>care@hastavamtextiles.com · +91 98XXX XXXXX</span></div>
+        <div class="info-row"><b>WhatsApp Orders</b><span>+91 98XXX XXXXX</span></div>
+        <div class="info-row"><b>Studio Address</b><span>Hastavam Textiles Studio, India</span></div>
+        <div class="info-row"><b>Business Hours</b><span>Mon–Sat, 10:00 AM – 7:00 PM IST</span></div>
+        <a href="https://wa.me/919800000000" class="whatsapp-cta" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        <div class="mapembed" role="img" aria-label="Map location placeholder"></div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you — we will be in touch shortly.');this.reset();">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email Address">
+        <textarea placeholder="Your Message"></textarea>
+        <button class="btn btn-primary" type="submit" style="align-self:flex-start;">Send Message</button>
+      </form>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- CURTAIN PAGE TRANSITION -->
+<div class="page-transition" id="pageTransition" aria-hidden="true">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="ptGrad" x1="0" y1="0" x2="99" y2="99" gradientUnits="userSpaceOnUse">
+        <stop offset="0.2" stop-color="#B5654A"/>
+        <stop offset="0.7" stop-color="#C0A080"/>
+      </linearGradient>
+    </defs>
+    <path class="pt-path" stroke="url(#ptGrad)" fill="url(#ptGrad)" stroke-width="2px" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z"/>
+  </svg>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+    <div class="modal-grid">
+      <div class="modal-img"><img id="mImg" src="" alt=""></div>
+      <div class="modal-body">
+        <p class="eyebrow" id="mCat">Category</p>
+        <h3 id="mName">Product Name</h3>
+        <div class="price" id="mPrice">₹0</div>
+        <div class="fab" id="mFab">Fabric</div>
+        <p class="desc" id="mDesc">Description</p>
+        <div class="btnrow">
+          <a href="https://wa.me/919800000000" target="_blank" rel="noopener" class="btn" style="background:#3f7a56;color:#fff;">Enquire on WhatsApp</a>
+        </div>
+        <p class="care">Care: Dry clean recommended. Store folded in muslin cloth away from direct sunlight.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="#" class="logo" onclick="goPage('home');return false;"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles®</a>
+        <p style="margin-top:14px;">Traditional Indian Style &amp; Culture. Woven by hand, worn with heart.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul>
+        <li><button class="mlink" style="all:unset;cursor:pointer;" onclick="goPage('home')">Home</button></li>
+        <li><button style="all:unset;cursor:pointer;" onclick="goPage('about')">About Us</button></li>
+        <li><button style="all:unset;cursor:pointer;" onclick="goPage('collections')">Collections</button></li>
+        <li><button style="all:unset;cursor:pointer;" onclick="goPage('craft')">Craftsmanship</button></li>
+      </ul></div>
+      <div><h4>Customer Care</h4><ul>
+        <li><button style="all:unset;cursor:pointer;" onclick="goPage('contact')">Contact</button></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Returns &amp; Exchanges</a></li>
+      </ul></div>
+      <div><h4>Policies</h4><ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Hastavam Textiles®. All rights reserved.</span>
+      <span>Handwoven with heart in India.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+/* ---------- product data ---------- */
+const PRODUCTS = {
+  banarasi:{title:"Banarasi Silk Sarees",desc:"Rich zari work &amp; Mughal-inspired motifs, woven along the ghats of Varanasi",items:[
+    {name:"Zari Meena Banarasi",price:"₹18,500",fab:"Pure Katan Silk",seed:"b1"},
+    {name:"Royal Kadhwa Banarasi",price:"₹24,900",fab:"Pure Silk, Kadhwa Weave",seed:"b2"},
+    {name:"Ivory Tanchoi Banarasi",price:"₹16,200",fab:"Tanchoi Silk",seed:"b3"},
+    {name:"Rani Pink Jangla Banarasi",price:"₹21,000",fab:"Pure Silk, Jangla Weave",seed:"b4"},
+  ]},
+  kanjivaram:{title:"Kanjivaram Silk Sarees",desc:"South India's pride — bold colour, temple borders, pure mulberry silk",items:[
+    {name:"Temple Border Kanjivaram",price:"₹27,500",fab:"Pure Mulberry Silk",seed:"k1"},
+    {name:"Contrast Pallu Kanjivaram",price:"₹23,800",fab:"Pure Mulberry Silk",seed:"k2"},
+    {name:"Bridal Red Kanjivaram",price:"₹32,000",fab:"Pure Mulberry Silk, Zari",seed:"k3"},
+    {name:"Emerald Checks Kanjivaram",price:"₹19,900",fab:"Pure Mulberry Silk",seed:"k4"},
+  ]},
+  chanderi:{title:"Chanderi Cotton-Silk",desc:"Sheer, lightweight elegance for daytime festivity and office wear",items:[
+    {name:"Sheer Butta Chanderi",price:"₹8,400",fab:"Cotton-Silk Blend",seed:"c1"},
+    {name:"Hand-block Chanderi Suit",price:"₹6,900",fab:"Chanderi Cotton",seed:"c2"},
+    {name:"Zari Border Chanderi",price:"₹9,600",fab:"Cotton-Silk Blend",seed:"c3"},
+    {name:"Pastel Chanderi Drape",price:"₹7,800",fab:"Chanderi Cotton",seed:"c4"},
+  ]},
+  bandhani:{title:"Bandhani &amp; Leheriya",desc:"Rajasthan's tie-dye artistry, a joyful celebration of colour",items:[
+    {name:"Classic Bandhani Dupatta",price:"₹3,200",fab:"Pure Cotton",seed:"d1"},
+    {name:"Leheriya Silk Saree",price:"₹11,500",fab:"Silk, Leheriya Dye",seed:"d2"},
+    {name:"Gharchola Bandhani",price:"₹14,800",fab:"Silk, Bandhani Work",seed:"d3"},
+    {name:"Mothra Bandhani Stole",price:"₹2,600",fab:"Georgette",seed:"d4"},
+  ]},
+  bridal:{title:"Bridal &amp; Trousseau Edit",desc:"Heavy zari and hand embroidery for the bride who honours tradition",items:[
+    {name:"Kadhwa Bridal Banarasi",price:"₹42,000",fab:"Pure Silk, Kadhwa",seed:"e1"},
+    {name:"Kanjivaram Bridal Red",price:"₹38,500",fab:"Pure Mulberry Silk",seed:"e2"},
+    {name:"Zardozi Trousseau Saree",price:"₹45,900",fab:"Silk, Zardozi Embroidery",seed:"e3"},
+    {name:"Heritage Gold Bridal Set",price:"₹52,000",fab:"Silk, Heavy Zari",seed:"e4"},
+  ]},
+  everyday:{title:"Everyday Handloom",desc:"Breathable cotton wear for daily grace",items:[
+    {name:"Handloom Cotton Saree",price:"₹3,800",fab:"Pure Cotton",seed:"f1"},
+    {name:"Block-Printed Kurti",price:"₹1,900",fab:"Cotton",seed:"f2"},
+    {name:"Everyday Chanderi Suit",price:"₹4,500",fab:"Chanderi Cotton",seed:"f3"},
+    {name:"Casual Handloom Dupatta",price:"₹1,400",fab:"Cotton",seed:"f4"},
+  ]},
+  festive:{title:"Festive Drapes",desc:"Vibrant colour and zari artistry for every celebration",items:[
+    {name:"Festive Zari Saree",price:"₹15,000",fab:"Silk Blend, Zari",seed:"g1"},
+    {name:"Puja Silk Drape",price:"₹9,200",fab:"Pure Silk",seed:"g2"},
+    {name:"Celebration Kanjivaram",price:"₹26,400",fab:"Pure Mulberry Silk",seed:"g3"},
+    {name:"Golden Zari Banarasi",price:"₹22,300",fab:"Pure Silk",seed:"g4"},
+  ]},
+  western:{title:"Western Wear",desc:"Everyday western staples and indo-western fusion, tailored for daily comfort",items:[
+    {name:"Tailored Cotton Shirt",price:"₹2,200",fab:"Pure Cotton",seed:"w1"},
+    {name:"Indo-Western Co-ord Set",price:"₹4,200",fab:"Cotton-Silk Blend",seed:"w2"},
+    {name:"Relaxed Linen Trousers",price:"₹2,800",fab:"Pure Linen",seed:"w3"},
+    {name:"Handloom Denim Jacket",price:"₹5,600",fab:"Denim, Hand-finished",seed:"w4"},
+  ]}
+};
+
+const HOME_PICKS = [
+  {cat:'banarasi', idx:1},
+  {cat:'kanjivaram', idx:2},
+  {cat:'bridal', idx:0},
+  {cat:'chanderi', idx:2},
+  {cat:'bandhani', idx:1},
+  {cat:'festive', idx:3},
+  {cat:'everyday', idx:2},
+  {cat:'western', idx:1},
+];
+
+function renderHomeProducts(){
+  const grid = document.getElementById('homeProductGrid');
+  if(!grid) return;
+  grid.innerHTML = HOME_PICKS.map((pick,i)=>{
+    const cat = PRODUCTS[pick.cat];
+    const p = cat.items[pick.idx];
+    return `
+    <div class="pcard" style="animation-delay:${i*0.08}s">
+      <div class="pcard-img"><img src="https://picsum.photos/seed/std-${p.seed}/420/560" alt="${p.name}"></div>
+      <div class="pcard-body">
+        <h4>${p.name}</h4>
+        <div class="fab">${cat.title}</div>
+        <div class="price">${p.price}</div>
+        <div class="pcard-actions">
+          <button class="view" onclick='openProduct(${JSON.stringify({...p,cat:cat.title})})'>View Details</button>
+          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">WhatsApp</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+renderHomeProducts();
+
+function openCategory(cat){
+  const render = ()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.cat===cat));
+    const data = PRODUCTS[cat];
+    document.getElementById('catTitle').textContent = data.title;
+    document.getElementById('catDesc').innerHTML = data.desc;
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = data.items.map((p,i)=>`
+    <div class="pcard" style="animation-delay:${i*0.08}s">
+      <div class="pcard-img"><img src="https://picsum.photos/seed/std-${p.seed}/420/560" alt="${p.name}"></div>
+      <div class="pcard-body">
+        <h4>${p.name}</h4>
+        <div class="fab">${p.fab}</div>
+        <div class="price">${p.price}</div>
+        <div class="pcard-actions">
+          <button class="view" onclick='openProduct(${JSON.stringify({...p,cat:data.title})})'>View Details</button>
+          <a class="wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">WhatsApp</a>
+        </div>
+      </div>
+    </div>`).join('');
+  };
+  if(currentPage === 'collections'){ render(); return; }
+  runPageTransition(()=>{ applyPage('collections'); render(); });
+}
+
+function openProduct(p){
+  document.getElementById('mImg').src = `https://picsum.photos/seed/std-${p.seed}/700/900`;
+  document.getElementById('mImg').alt = p.name;
+  document.getElementById('mCat').textContent = p.cat;
+  document.getElementById('mName').textContent = p.name;
+  document.getElementById('mPrice').textContent = p.price;
+  document.getElementById('mFab').textContent = 'Fabric: ' + p.fab;
+  document.getElementById('mDesc').textContent = 'A signature Hastavam piece, hand-finished by artisan partners and inspected thread by thread before it reaches you — manehly handled, from our hands to yours.';
+  document.getElementById('modalBg').classList.add('open');
+}
+function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
+
+/* ---------- mute toggle ---------- */
+function toggleMute(){
+  const v = document.getElementById('heroVideo');
+  v.muted = !v.muted;
+  document.getElementById('muteIconOff').classList.toggle('hidden', !v.muted);
+  document.getElementById('muteIconOn').classList.toggle('hidden', v.muted);
+  document.getElementById('muteBtn').setAttribute('aria-label', v.muted ? 'Unmute video' : 'Mute video');
+}
+
+/* ---------- curtain page transition ---------- */
+const ptPath = document.querySelector('.page-transition .pt-path');
+const PT = {
+  flat:"M 0 100 V 100 Q 50 100 100 100 V 100 z",
+  tent:"M 0 100 V 50 Q 50 0 100 50 V 100 z",
+  full:"M 0 100 V 0 Q 50 0 100 0 V 100 z"
+};
+let transitionBusy = false;
+
+function runPageTransition(swapFn){
+  if(!ptPath || !window.gsap || matchMedia('(prefers-reduced-motion: reduce)').matches){ swapFn(); return; }
+  if(transitionBusy) return;
+  transitionBusy = true;
+  const finish = ()=>{ gsap.set(ptPath, {attr:{d:PT.flat}}); transitionBusy = false; };
+  const tl = gsap.timeline({ onComplete: finish, onInterrupt: finish, onReverseComplete: finish });
+  tl.set(ptPath, {attr:{d:PT.flat}})
+    .to(ptPath, {attr:{d:PT.tent}, duration:.28, ease:'power2.in'})
+    .to(ptPath, {attr:{d:PT.full}, duration:.22, ease:'power2.out'})
+    .call(()=>{ try{ swapFn(); }catch(e){ console.error(e); } })
+    .to(ptPath, {attr:{d:PT.tent}, duration:.18, ease:'power2.in'})
+    .to(ptPath, {attr:{d:PT.flat}, duration:.32, ease:'power2.out'});
+  setTimeout(()=>{ if(transitionBusy){ finish(); tl.kill(); } }, 2500);
+}
+
+/* ---------- page router ---------- */
+let currentPage = 'home';
+
+function goPage(name){
+  if(name === currentPage){ applyPage(name); return; }
+  runPageTransition(()=> applyPage(name));
+}
+
+function applyPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  currentPage = name;
+  document.querySelectorAll('.navlinks button').forEach(b=>b.classList.toggle('active', b.dataset.page===name));
+  document.getElementById('mmenu').classList.remove('open');
+  window.scrollTo(0,0);
+  if(name==='collections' && !document.getElementById('productGrid').innerHTML){ openCategory('banarasi'); }
+  refreshReveal();
+}
+
+/* ---------- header shrink ---------- */
+window.addEventListener('scroll', ()=>{
+  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY>30);
+});
+
+/* ---------- reveal on scroll ---------- */
+let io;
+function refreshReveal(){
+  if(io) io.disconnect();
+  io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+refreshReveal();
+
+/* ---------- counters ---------- */
+const counters = document.querySelectorAll('.counter');
+const cIo = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el = e.target, target = +el.dataset.target;
+      let cur = 0; const step = Math.max(1, Math.round(target/40));
+      const t = setInterval(()=>{ cur += step; if(cur>=target){cur=target; clearInterval(t);} el.textContent = cur; },28);
+      cIo.unobserve(el);
+    }
+  });
+},{threshold:.5});
+counters.forEach(c=>cIo.observe(c));
+
+/* ---------- hero: rotating word ---------- */
+(function(){
+  const el = document.getElementById('heroRotate');
+  if(!el) return;
+  const words = ['Grace.','Heart.','Pride.','Style.'];
+  let i = 0;
+  setInterval(()=>{
+    i = (i+1) % words.length;
+    el.style.opacity = 0;
+    setTimeout(()=>{ el.textContent = words[i]; el.style.opacity = 1; }, 300);
+  }, 2600);
+})();
+
+/* ---------- fan showcase (GSAP powered) ---------- */
+(function(){
+  const stage = document.getElementById('fanStage');
+  if(!stage || typeof gsap === 'undefined') return;
+
+  const FAN_CARDS = [
+    { imgUrl:'https://picsum.photos/seed/std-banarasi/500/650',   alt:'Banarasi silk saree',       label:'Banarasi Silk',    cat:'banarasi' },
+    { imgUrl:'https://picsum.photos/seed/std-kanjivaram/500/650', alt:'Kanjivaram silk saree',      label:'Kanjivaram Silk',  cat:'kanjivaram' },
+    { imgUrl:'https://picsum.photos/seed/std-bridal/500/650',     alt:'Bridal trousseau saree',     label:'Bridal Trousseau', cat:'bridal' },
+    { imgUrl:'https://picsum.photos/seed/std-chanderi/500/650',   alt:'Chanderi cotton-silk saree', label:'Chanderi Cotton',  cat:'chanderi' },
+    { imgUrl:'https://picsum.photos/seed/std-bandhani/500/650',   alt:'Bandhani tie-dye drape',     label:'Bandhani',         cat:'bandhani' },
+    { imgUrl:'https://picsum.photos/seed/std-everyday/500/650',   alt:'Everyday handloom saree',    label:'Everyday Handloom',cat:'everyday' },
+    { imgUrl:'https://picsum.photos/seed/std-western/500/650',    alt:'Western wear ensemble',      label:'Western Wear',     cat:'western' },
+  ];
+
+  const FAN_POSITIONS = [
+    { rot:-22, scale:0.72, x:-13.2, y:3.4, zIndex:1 },
+    { rot:-15, scale:0.80, x:-9.7,  y:2.0, zIndex:2 },
+    { rot:-7,  scale:0.90, x:-4.9,  y:0.7, zIndex:3 },
+    { rot:0,   scale:1.0,  x:0,     y:0,   zIndex:10 },
+    { rot:7,   scale:0.90, x:4.9,   y:0.7, zIndex:3 },
+    { rot:15,  scale:0.80, x:9.7,   y:2.0, zIndex:2 },
+    { rot:22,  scale:0.72, x:13.2,  y:3.4, zIndex:1 },
+  ];
+
+  function respMult(w){
+    if(w < 480) return 0.56;
+    if(w < 640) return 0.7;
+    if(w < 900) return 0.82;
+    if(w < 1100) return 0.9;
+    return 1;
+  }
+
+  FAN_CARDS.forEach(c=>{
+    const el = document.createElement('div');
+    el.className = 'fan-card';
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-label', `Explore ${c.label} collection`);
+    el.innerHTML = `<img src="${c.imgUrl}" alt="${c.alt}" loading="lazy"><div class="fan-label">${c.label} →</div>`;
+    el.addEventListener('click', ()=>{ if(typeof openCategory === 'function') openCategory(c.cat); });
+    el.addEventListener('keydown', (ev)=>{ if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); if(typeof openCategory === 'function') openCategory(c.cat); } });
+    stage.appendChild(el);
+  });
+
+  const cardEls = Array.from(stage.querySelectorAll('.fan-card'));
+  let entered = false;
+  let activeIdx = null;
+
+  function layout(hoverIdx){
+    const mult = respMult(window.innerWidth);
+    cardEls.forEach((el,i)=>{
+      const p = FAN_POSITIONS[i];
+      let x = p.x*mult, y = p.y*mult, rot = p.rot, scale = p.scale, z = p.zIndex;
+      if(hoverIdx !== null){
+        if(i === hoverIdx){
+          y -= 1.8*mult; scale = Math.min(scale*1.12, 1.08); z = 50;
+        } else {
+          const dist = i - hoverIdx;
+          x += 2.6*mult*Math.sign(dist);
+          rot += dist > 0 ? 3 : -3;
+        }
+      }
+      gsap.to(el, { x:`${x}rem`, y:`${y}rem`, rotation:rot, scale, zIndex:z, duration:.55, ease:'elastic.out(1,.8)', overwrite:'auto' });
+    });
+  }
+
+  cardEls.forEach((el,i)=>{
+    el.addEventListener('mouseenter', ()=>{ if(!entered) return; activeIdx = i; layout(i); });
+    el.addEventListener('focus', ()=>{ if(!entered) return; activeIdx = i; layout(i); });
+  });
+  stage.addEventListener('mouseleave', ()=>{ if(!entered) return; activeIdx = null; layout(null); });
+  window.addEventListener('resize', ()=>{ if(entered) layout(activeIdx); });
+
+  const fanIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !entered){
+        entered = true;
+        const mult = respMult(window.innerWidth);
+        cardEls.forEach((el,i)=>{
+          gsap.set(el, { x:0, y:'7rem', rotation:0, scale:.5, opacity:0, zIndex:0 });
+          gsap.to(el, {
+            x:`${FAN_POSITIONS[i].x*mult}rem`, y:`${FAN_POSITIONS[i].y*mult}rem`,
+            rotation:FAN_POSITIONS[i].rot, scale:FAN_POSITIONS[i].scale, opacity:1, zIndex:FAN_POSITIONS[i].zIndex,
+            duration:1.1, ease:'elastic.out(1,.75)', delay:i*0.07
+          });
+        });
+        fanIo.unobserve(stage);
+      }
+    });
+  }, { threshold:.25 });
+  fanIo.observe(stage);
+})();
+
+</script>
+
+</body>
+</html>
