@@ -148,10 +148,10 @@ INSERT INTO public.website_content (key, value) VALUES
   ('hero_title',            'Your Trusted Travel Partner'),
   ('hero_subtitle',         'Safe · Reliable · Affordable cab services across South India'),
   ('about_description',     'Saran Tours & Travels has been serving South India since 2010. We offer premium cab services for all your travel needs.'),
-  ('contact_phone',         '+91 74486 44544'),
+  ('contact_phone',         '+91 89403 87531'),
   ('contact_email',         'dccabsandtours@gmail.com'),
   ('contact_address',       'Dindigul, Tamil Nadu, India'),
-  ('whatsapp_number',       '917448644544'),
+  ('whatsapp_number',       '918940387531'),
   ('footer_tagline',        'Your journey, our responsibility')
 ON CONFLICT (key) DO NOTHING;
 

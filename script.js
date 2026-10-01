@@ -243,7 +243,7 @@ if (swapBtn) {
 // ═══════════════════════════════════════════════════════════════════════════
 
 function sendToWhatsApp(formData) {
-  const phone = '917448644544';
+  const phone = '918940387531';
   const tripType = document.querySelector('.trip-btn.active')?.innerText.trim() || 'One Way';
   let message = `*🚕 New Cab Booking Request*\n\n`;
   message += `*📍 Trip:* ${tripType}\n`;
@@ -343,7 +343,7 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.onsubmit = async (e) => {
     e.preventDefault();
-    const phone   = '917448644544';
+    const phone   = '918940387531';
     const name    = document.getElementById('contact-name').value;
     const userPhone = document.getElementById('contact-phone').value;
     const email   = document.getElementById('contact-email').value;
