@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Saran Tours & Travels</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../images/favicon-192.png" />
+  <link rel="apple-touch-icon" href="../images/saran-apple-touch.png" />
+</head>
+
+<body class="admin-login-body">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="../images/saran-logo.webp" alt="Saran Tours &amp; Travels logo" class="login-logo">
+        <h2>Admin Login</h2>
+        <p>Saran Tours &amp; Travels Dashboard</p>
+      </div>
+      <form id="adminLoginForm">
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Enter admin email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+        </div>
+        <button type="submit" id="loginBtn" class="btn btn-primary" style="width:100%; justify-content:center;">
+          Login to Dashboard
+        </button>
+      </form>
+      <div id="loginError"
+        style="display:none; color:#ff0000; font-size:0.85rem; margin-top:10px; text-align:center;"></div>
+      <div id="loginLoading"
+        style="display:none; color:#888; font-size:0.85rem; margin-top:10px; text-align:center;">
+        Signing in…
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabase.js"></script>
+  <script src="/data-api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // If already logged in, redirect immediately
+      try {
+        await dataAPI.initPromise;
+        const session = await dataAPI.getAdminSession();
+        if (session) {
+          window.location.href = '/dashboard';
+          return;
+        }
+      } catch (e) { /* not logged in */ }
+
+      const loginForm    = document.getElementById('adminLoginForm');
+      const loginError   = document.getElementById('loginError');
+      const loginLoading = document.getElementById('loginLoading');
+      const loginBtn     = document.getElementById('loginBtn');
+
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email    = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        loginError.style.display   = 'none';
+        loginLoading.style.display = 'block';
+        loginBtn.disabled          = true;
+
+        const { user, error } = await dataAPI.adminSignIn(email, password);
+
+        loginLoading.style.display = 'none';
+        loginBtn.disabled          = false;
+
+        if (user) {
+          window.location.href = '/dashboard';
+        } else {
+          loginError.textContent   = error || 'Invalid credentials. Please try again.';
+          loginError.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
