@@ -1229,3 +1229,15 @@
 /* Brand tweak: bright gold accents on navy hero */
 .hero-badge{color:var(--gold-bright)}
 .breadcrumb span{color:var(--gold-bright)}
+
+
+/* ── Layout helpers for updated tariff (4-card one-way row, 2-card hourly row) ── */
+.pricing-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.local-pkg-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 780px; margin: 0 auto; }
+@media (max-width: 1100px) {
+  .pricing-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .pricing-grid, .pricing-grid.cols-4 { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto 20px; }
+  .local-pkg-grid.cols-2 { grid-template-columns: 1fr; max-width: 460px; }
+}

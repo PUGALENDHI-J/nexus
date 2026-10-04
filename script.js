@@ -59,7 +59,7 @@ function renderCabOptions() {
   if (grid) {
     grid.innerHTML = cabs.map((cab, idx) => {
       const imgSrc = cab.image ? cab.image.replace('../', '') : 'images/sedan.png';
-      const capacity = cab.type === 'SUV' ? 6 : cab.type === 'Tempo' ? 12 : 4;
+      const capacity = cab.type === 'SUV' ? 6 : (cab.type === 'Innova' || cab.type === 'Crysta') ? 7 : (cab.type === 'Tempo' || cab.type === 'Urbania') ? 12 : 4;
       return `
         <div class="car-option ${idx === 0 ? 'selected' : ''}" data-car="${cab.type.toLowerCase()}" data-id="${cab.id}">
           <div class="car-option-icon"><img src="${imgSrc}" alt="${cab.type}" onerror="this.src='images/sedan.png'"></div>

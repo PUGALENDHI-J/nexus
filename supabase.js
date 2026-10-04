@@ -103,10 +103,12 @@ function getSupabase() {
 // ─── DEFAULT FALLBACK DATA ────────────────────────────────────────────────────
 // Used when DB is unreachable (offline, unconfigured, etc.)
 const DEFAULT_CABS = [
-  { id: 1, name: 'Premium Hatchback', type: 'Hatchback', price: 9,  availability: 'Available', image: 'images/hatchback.png' },
-  { id: 2, name: 'Executive Sedan',   type: 'Sedan',     price: 12, availability: 'Available', image: 'images/sedan.png' },
-  { id: 3, name: 'Luxury SUV',        type: 'SUV',       price: 16, availability: 'Available', image: 'images/suv_premium.png' },
-  { id: 4, name: 'Tempo Traveller',   type: 'Tempo',     price: 20, availability: 'Available', image: 'images/tempo.png' },
+  { id: 1, name: 'Sedan',           type: 'Sedan',   price: 15, availability: 'Available', image: 'images/sedan.png' },
+  { id: 2, name: 'SUV',             type: 'SUV',     price: 20, availability: 'Available', image: 'images/suv_premium.png' },
+  { id: 3, name: 'Innova',          type: 'Innova',  price: 21, availability: 'Available', image: 'images/suv_real_1.jpg' },
+  { id: 4, name: 'Innova Crysta',   type: 'Crysta',  price: 23, availability: 'Available', image: 'images/suv_real_1.jpg' },
+  { id: 5, name: 'Tempo Traveller', type: 'Tempo',   price: 27, availability: 'Available', image: 'images/tempo.png' },
+  { id: 6, name: 'Urbania',         type: 'Urbania', price: 35, availability: 'Available', image: 'images/tempo.png' },
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════════

@@ -17,10 +17,12 @@ CREATE TABLE IF NOT EXISTS public.cab_services (
 
 -- Seed default cabs
 INSERT INTO public.cab_services (name, type, price, availability, image) VALUES
-  ('Premium Hatchback', 'Hatchback', 9,  'Available', 'images/hatchback.png'),
-  ('Executive Sedan',   'Sedan',     12, 'Available', 'images/sedan.png'),
-  ('Luxury SUV',        'SUV',       16, 'Available', 'images/suv_premium.png'),
-  ('Tempo Traveller',   'Tempo',     20, 'Available', 'images/tempo.png')
+  ('Sedan',           'Sedan',   15, 'Available', 'images/sedan.png'),
+  ('SUV',             'SUV',     20, 'Available', 'images/suv_premium.png'),
+  ('Innova',          'Innova',  21, 'Available', 'images/suv_real_1.jpg'),
+  ('Innova Crysta',   'Crysta',  23, 'Available', 'images/suv_real_1.jpg'),
+  ('Tempo Traveller', 'Tempo',   27, 'Available', 'images/tempo.png'),
+  ('Urbania',         'Urbania', 35, 'Available', 'images/tempo.png')
 ON CONFLICT DO NOTHING;
 
 -- RLS: public read, authenticated write
@@ -150,7 +152,7 @@ INSERT INTO public.website_content (key, value) VALUES
   ('about_description',     'Saran Tours & Travels has been serving South India since 2010. We offer premium cab services for all your travel needs.'),
   ('contact_phone',         '+91 89403 87531'),
   ('contact_email',         'dccabsandtours@gmail.com'),
-  ('contact_address',       'Dindigul, Tamil Nadu, India'),
+  ('contact_address',       'Madurai, Tamil Nadu, India'),
   ('whatsapp_number',       '918940387531'),
   ('footer_tagline',        'Your journey, our responsibility')
 ON CONFLICT (key) DO NOTHING;

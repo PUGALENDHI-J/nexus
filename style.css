@@ -931,3 +931,9 @@ input::placeholder, select::placeholder, textarea::placeholder {
 /* Brand tweaks: gold accents on navy surfaces */
 .footer .brand-slogan,.page-hero .hero-badge-inner,.cta-band .section-tag{color:var(--gold-bright)}
 .hero-badge-inner{color:var(--gold-bright)}
+
+
+/* 6-vehicle fleet grid */
+.features-grid.fleet-six{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.features-grid.fleet-six{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.features-grid.fleet-six{grid-template-columns:1fr}}
